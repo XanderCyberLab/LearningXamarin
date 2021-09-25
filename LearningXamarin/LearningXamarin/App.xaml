@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearningXamarin.App">
     <Application.Resources>
-
+        <Color x:Key="Blueish">#4C4CE4</Color>
+        <Color x:Key="whiteColor">#FFFFF</Color>
+        <Style x:Key="normalButton" 
+               TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Blueish}"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+        <!-- Sorta like a CSS Style Sheet-->
     </Application.Resources>
 </Application>

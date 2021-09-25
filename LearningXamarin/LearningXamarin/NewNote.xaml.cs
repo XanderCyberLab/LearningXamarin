@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace LearningXamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : TabbedPage
+    public partial class NewNote : ContentPage
     {
-        public HomePage()
+        public NewNote()
         {
             InitializeComponent();
-        }
-
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new NewNote()); // Code to go to NewNote Page
         }
     }
 }
