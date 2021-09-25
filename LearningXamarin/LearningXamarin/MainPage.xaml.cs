@@ -14,11 +14,20 @@ namespace LearningXamarin
         {
             InitializeComponent();
         }
-        private void Button_Clicked(object sender, EventArgs e)
+
+        private void loginButton_Clicked(object sender, EventArgs e)
         {
-            string userName = nameEntry.Text;
-            string greeting = "Hello " + userName;
-            greetingLabel.Text = greeting;
+            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text); // Checks if Email box is empty
+            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text); // Checks if Password box is empty
+
+            if(isEmailEmpty || isPasswordEmpty) // No need == True since it's already a Boolean
+            { // No Valid Login Info Enter to Move Forward
+
+            }
+            else
+            { // Login Info Enter to Move Forward
+                Navigation.PushAsync(new HomePage());
+            }
         }
     }
 }

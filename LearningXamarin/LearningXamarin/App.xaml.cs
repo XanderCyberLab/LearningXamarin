@@ -10,7 +10,7 @@ namespace LearningXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());// Establish Root Page. Creating Parent page that display the Mainpage
         }
 
         protected override void OnStart()
