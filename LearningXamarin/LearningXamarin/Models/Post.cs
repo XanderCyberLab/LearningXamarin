@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LearningXamarin
 {
-    class Model
+    class Post
     {
         [PrimaryKey, AutoIncrement] //SQLite Attributes required. AutoIncrement increases ID # when new model is enter in the DB
         public int Id { get; set; }
