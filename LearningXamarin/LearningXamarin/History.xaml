@@ -2,11 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearningXamarin.History">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to the History Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView x:Name="postsListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Experience}"/>
+                <!-- Creates a table that can be seen on the app, data pulled from DB Posts-->
+            </DataTemplate>
+            
+        </ListView.ItemTemplate>
+        
+        
+    </ListView>
+    
 </ContentPage>

@@ -18,13 +18,16 @@ namespace LearningXamarin
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
+        protected override void OnAppearing()//a way to refresh everytime go to history page. 
         {
             base.OnAppearing();
-            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation); //Constructor needs path of database location
-            conn.CreateTable<Post>();//Will ignore if a Table is already created. 
-            var posts = conn.Table<Post>().ToList(); //Creates a list of Post objects. Need to return type of table(POST) create var posts 
-            conn.Close();//Need to close database after reading
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))//Constructor needs path of database location
+            {
+                conn.CreateTable<Post>();//Will ignore if a Table is already created. 
+                var posts = conn.Table<Post>().ToList(); //Creates a list of Post objects. Need to return type of table(POST) create var posts 
+                postsListView.ItemsSource = posts; //listview created 
+            }
+            //conn.Close();//Need to close database after reading <-- Not needed when using is added to the connection. Acts like a close
 
 
             

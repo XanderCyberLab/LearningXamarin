@@ -24,15 +24,17 @@ namespace LearningXamarin
             {
                 Experience = experienceEntry.Text
             };
-            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
-            conn.CreateTable<Post>();
-            int rows = conn.Insert(post);
-            conn.Close();
-            if (rows > 0)
-                DisplayAlert("Success,", "Entry Received", "Message");
-            else
-                DisplayAlert("Failed,", "Entry Not Received", "Try Again");
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation)) 
+                //using statements when making sqlite connections to databases.
+            {
+                conn.CreateTable<Post>();
+                int rows = conn.Insert(post);
 
+                if (rows > 0)
+                    DisplayAlert("Success,", "Entry Received", "Message");
+                else
+                    DisplayAlert("Failed,", "Entry Not Received", "Try Again");
+            }
         }
     }
 }
