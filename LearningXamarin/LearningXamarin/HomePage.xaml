@@ -10,7 +10,7 @@
     </TabbedPage.ToolbarItems>
     <local:History Title="History"/> <!-- These are tabs for each page -->
     <local:MapPage Title="Map"/>
-    <local:ProfilePage Title="Profile}"/>
+    <local:ProfilePage Title="Profile"/>
     
 
 </TabbedPage>

@@ -19,7 +19,7 @@ namespace LearningXamarin
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewNote()); // Code to go to NewNote Page
+            Navigation.PushAsync(new TravelPage()); // Code to go to NewNote Page
         }
     }
 }

@@ -17,7 +17,12 @@ namespace LearningXamarin.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            //Adding Maps to app
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
 
+
+
+            //Adding Database location
             string dbName = "app_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName); //Full path will have path to folder and dbname file

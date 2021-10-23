@@ -32,5 +32,15 @@ namespace LearningXamarin
 
             
         }
+
+        private void postsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedPost = postsListView.SelectedItem as Post;
+
+            if(selectedPost != null)
+            {
+                Navigation.PushAsync(new PostDetailPage(selectedPost));
+            }
+        }
     }
 }

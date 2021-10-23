@@ -24,6 +24,11 @@ namespace LearningXamarin.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            //Adding Maps 
+            Xamarin.FormsMaps.Init(); //Adds function to display maps
+            //Right Click on info.plist -> Open With - > Generic Plist Editor and add permission to either always or in use location under privacy.
+
+            //Adding Database Location
             string dbName = "app_db.sqlite";
             string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
             string fullPath = Path.Combine(folderPath, dbName); //Full path will have path to folder and dbname file
